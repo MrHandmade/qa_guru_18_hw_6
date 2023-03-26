@@ -3,13 +3,12 @@ package core;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
-import pages.RegistrationPage;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class BaseTest {
-   public RegistrationPage registrationPage = new RegistrationPage();
+
 
     @BeforeAll
     public static void setUp(){
@@ -22,6 +21,10 @@ public class BaseTest {
 
         Selenide.open(baseUrl + "automation-practice-form");
 
+    }
+
+    @BeforeAll
+    public static void removeBanners(){
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
     }

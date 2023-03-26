@@ -2,8 +2,10 @@ package tests;
 
 import core.BaseTest;
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
 
 public class DemoQaTest extends BaseTest {
+    public RegistrationPage registrationPage = new RegistrationPage();
     @Test
     public void registrationFormTest(){
          String name = "Maxim",
